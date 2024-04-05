@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Formative Assessment 1 </title>
+    </head>
+    <body>
+        <h1> Multiplication Table </h1>
+        <br>
+        <table id="tablex"></table>
+
+        <script>
+            function multiplicationTable() {
+                var n = prompt("Please input a value for the number of rows: ");
+                var m = prompt("Please input a value for the number of columns: ");
+
+                while (n < 2 || n > 10) {
+                    alert("The values that you have entered did not qualify from the range of 2-10. Try entering other values.");
+                    return;
+                }
+
+                var table = document.getElementById("tablex");
+                table.innerHTML = "";
+
+                for (var a = 1; a <= n; a++) {
+                    var row = table.insertRow();
+                    
+                    for (var b = 1; b <= m; b++) {
+                        var cell = row.insertCell();
+                        cell.textContent = a * b;
+                    }
+                }
+            }
+            
+            multiplicationTable(); 
+        </script>
+    </body>
+</html>
